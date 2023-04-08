@@ -7,7 +7,7 @@ import model.Profesional;
 public interface ProfesionalDAO {
 	
 	public Profesional getProfesionalByNameandPass(String userName, String password);
-	public List<Profesional> getAllProfesional();
+	public List<Profesional> getAllProfesionales();
 	public int deleteProfesional(Integer idProfesional);
 	public int updateProfesional(Profesional profesional);
 	public void crearProfesional(Profesional profesional);

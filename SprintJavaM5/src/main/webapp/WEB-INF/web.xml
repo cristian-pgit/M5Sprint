@@ -116,14 +116,14 @@
     <url-pattern>/ListarCapacitaciones</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description>Crea la Capacitacion</description>
-    <display-name>CrearCapacitacion</display-name>
-    <servlet-name>CrearCapacitacion</servlet-name>
-    <servlet-class>controladores.CrearCapacitacion</servlet-class>
+    <description>Hace Submit de la Capacitacion</description>
+    <display-name>EnviarCapacitacion</display-name>
+    <servlet-name>EnviarCapacitacion</servlet-name>
+    <servlet-class>controladores.EnviarCapacitacion</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CrearCapacitacion</servlet-name>
-    <url-pattern>/CrearCapacitacion</url-pattern>
+    <servlet-name>EnviarCapacitacion</servlet-name>
+    <url-pattern>/EnviarCapacitacion</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -164,5 +164,35 @@
   <servlet-mapping>
     <servlet-name>ListarClientes</servlet-name>
     <url-pattern>/ListarClientes</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarAdministrativos</display-name>
+    <servlet-name>ListarAdministrativos</servlet-name>
+    <servlet-class>controladores.ListarAdministrativos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarAdministrativos</servlet-name>
+    <url-pattern>/ListarAdministrativos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarProfesionales</display-name>
+    <servlet-name>ListarProfesionales</servlet-name>
+    <servlet-class>controladores.ListarProfesionales</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarProfesionales</servlet-name>
+    <url-pattern>/ListarProfesionales</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Trae Formulario</description>
+    <display-name>CrearCapacitacion</display-name>
+    <servlet-name>CrearCapacitacion</servlet-name>
+    <servlet-class>controladores.CrearCapacitacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrearCapacitacion</servlet-name>
+    <url-pattern>/CrearCapacitacion</url-pattern>
   </servlet-mapping>
 </web-app>

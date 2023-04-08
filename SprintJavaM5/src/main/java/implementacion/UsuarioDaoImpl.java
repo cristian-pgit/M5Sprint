@@ -130,8 +130,32 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 
 	@Override
 	public List<Administrativo> getAllAdministrativos() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT u.idUsuario, u.userName, u.fNacimiento, u.run, a.area, a.experiencia_previa  FROM usuario u JOIN administrativo a ON u.idUsuario = a.id_administrativo;";
+		initConnection();
+		List<Administrativo> admins = null;
+		try {
+			conn = SingletonImnot.getConnection();
+			stm = conn.createStatement();
+			stm.executeQuery(sql);
+			rs = stm.getResultSet();
+
+			admins = new ArrayList<Administrativo>();
+			while (rs.next()) {
+				Administrativo adm = new Administrativo();
+				adm.setIdUsuario(rs.getInt(1));
+				adm.setUserName(rs.getString(2));
+				adm.setfNacimiento(rs.getDate(3));
+				adm.setRun(rs.getInt(4));
+				adm.setArea(rs.getString(5));
+				adm.setExpPre(rs.getInt(6));
+				admins.add(adm);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return admins;
 	}
 
 	@Override
@@ -171,9 +195,33 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 	}
 
 	@Override
-	public List<Profesional> getAllProfesional() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Profesional> getAllProfesionales() {
+		String sql = "SELECT u.idUsuario, u.userName, u.fNacimiento, u.run, p.titulo_profesional, p.fechaIngreso  FROM usuario u JOIN profesional p ON u.idUsuario = p.id_profesional;";
+		initConnection();
+		List<Profesional> pros = null;
+		try {
+			conn = SingletonImnot.getConnection();
+			stm = conn.createStatement();
+			stm.executeQuery(sql);
+			rs = stm.getResultSet();
+
+			pros = new ArrayList<Profesional>();
+			while (rs.next()) {
+				Profesional pro = new Profesional();
+				pro.setIdUsuario(rs.getInt(1));
+				pro.setUserName(rs.getString(2));
+				pro.setfNacimiento(rs.getDate(3));
+				pro.setRun(rs.getInt(4));
+				pro.setTitulo(rs.getString(5));
+				pro.setFechaIng(rs.getDate(6));
+				pros.add(pro);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return pros;
 	}
 
 	@Override
@@ -226,15 +274,19 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 			clientes = new ArrayList<Cliente>();
 			while (rs.next()) {
 				Cliente cli = new Cliente();
-				cli.setRutCliente(rs.getInt(2));
-				cli.setNombres(rs.getString(3));
-				cli.setApellidos(rs.getString(4));
-				cli.setFono(rs.getInt(5));
-				cli.setAfp(rs.getString(6));
-				cli.setSds(rs.getInt(7));
-				cli.setDireccion(rs.getString(8));
-				cli.setComuna(rs.getString(9));
-				cli.setEdad(rs.getInt(10));
+				cli.setIdUsuario(rs.getInt(1));
+				cli.setUserName(rs.getString(2));
+				cli.setfNacimiento(rs.getDate(3));
+				cli.setRun(rs.getInt(4));
+				cli.setRutCliente(rs.getInt(5));
+				cli.setNombres(rs.getString(6));
+				cli.setApellidos(rs.getString(7));
+				cli.setFono(rs.getInt(8));
+				cli.setAfp(rs.getString(9));
+				cli.setSds(rs.getInt(10));
+				cli.setDireccion(rs.getString(11));
+				cli.setComuna(rs.getString(12));
+				cli.setEdad(rs.getInt(13));
 				clientes.add(cli);
 			}
 

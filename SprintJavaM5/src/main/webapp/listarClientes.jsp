@@ -12,6 +12,7 @@
 	integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
 	crossorigin="anonymous">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="shortcut icon" href="https://i.ibb.co/FzxxWTL/BDLY-ico.png"
 	type="image/x-icon">
 <link rel="stylesheet" href="Assets/style.css">
@@ -45,37 +46,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="user" items="${requestScope.usuarios}">
-					<tr>
-						<td><c:out value="${user.idUsuario}" /></td>
-						<td><c:out value="${user.userName}" /></td>
-						<td><c:out value="${user.fNacimiento}" /></td>
-						<td><c:out value="${user.run}" /></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:forEach>
 				<c:forEach var="client" items="${requestScope.clientes}">
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td><c:out value="${client.idUsuario}" /></td>
+						<td><c:out value="${client.userName}" /></td>
+						<td><fmt:formatDate value="${client.fNacimiento}" pattern="dd/MM/yyyy"/></td>
+						<td><c:out value="${client.run}" /></td>
 						<td><c:out value="${client.rutCliente}" /></td>
 						<td><c:out value="${client.nombres}" /></td>
 						<td><c:out value="${client.apellidos}" /></td>
 						<td><c:out value="${client.fono}" /></td>
 						<td><c:out value="${client.afp}" /></td>
 						<td><c:choose>
-								<c:when test="${user.sds == 1}">Fonasa</c:when>
-								<c:when test="${user.sds == 2}">Isapre</c:when>
+								<c:when test="${client.sds == 1}">Fonasa</c:when>
+								<c:when test="${client.sds == 2}">Isapre</c:when>
 								<c:otherwise>Otro</c:otherwise>
 							</c:choose></td>
 						<td><c:out value="${client.direccion}" /></td>

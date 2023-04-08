@@ -21,7 +21,7 @@
             Crear
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="crearcapacitacion.jsp">Crear Capacitacion</a></li>
+            <li><a class="dropdown-item" href="CrearCapacitacion">Crear Capacitacion</a></li>
             <li><a class="dropdown-item" href="crearusuario.jsp">Crear Usuario</a></li>
           </ul>
         </li>

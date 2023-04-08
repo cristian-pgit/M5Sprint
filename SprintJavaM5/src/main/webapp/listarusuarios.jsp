@@ -12,6 +12,7 @@
 	integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
 	crossorigin="anonymous">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="shortcut icon" href="https://i.ibb.co/FzxxWTL/BDLY-ico.png"
 	type="image/x-icon">
 <link rel="stylesheet" href="Assets/style.css">
@@ -43,11 +44,11 @@
 					<tr>
 						<td><c:out value="${user.idUsuario}" /></td>
 						<td><c:out value="${user.userName}" /></td>
-						<td><c:out value="${user.fNacimiento}" /></td>
+						<td><fmt:formatDate value="${user.fNacimiento}" pattern="dd/MM/yyyy"/></td>
 						<td><c:out value="${user.run}" /></td>
 						<td><c:choose>
 								<c:when test="${user.perfil == 'cli'}">Cliente</c:when>
-								<c:when test="${user.perfil == 'Cliente'}">Cliente</c:when>
+								<c:when test="${user.perfil == 'Cliiente'}">Cliente</c:when>
 								<c:when test="${user.perfil == 'pro'}">Profesional</c:when>
 								<c:when test="${user.perfil == 'Profesional'}">Profesional</c:when>
 								<c:when test="${user.perfil == 'adm'}">Administrativo</c:when>

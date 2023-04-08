@@ -37,9 +37,7 @@ public class ListarClientes extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		List<Usuario> users = mostrarUsuarios();
 		List<Cliente> clients = mostrarClientes();
-		request.setAttribute("usuarios", users);
 		request.setAttribute("clientes", clients);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/listarClientes.jsp");
 		rd.forward(request, response);
@@ -62,19 +60,5 @@ public class ListarClientes extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private List<Usuario> mostrarUsuarios() {
-		UsuarioDAO cdao = new UsuarioDaoImpl();
-		List<Usuario> users = cdao.getAllUsuario();
-
-		return users;
-	}
-
-	private Object usuarioAObject(Usuario u) {
-		return (Object) u;
-	}
-
-	private Object clienteAObject(Cliente c) {
-		return (Object) c;
-	}
 
 }

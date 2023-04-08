@@ -36,11 +36,16 @@
 							Capacitación:</label> <input type="number" class="form-control"
 							id="idCapacitacion" required name="idCapacitacion">
 					</div>
+				
 					<div class="form-group">
-						<label class="text-center" for="rutCliente">RUT de
-							Cliente:</label> <input type="number" class="form-control"
-							id="rutCliente" required name="rutCliente">
-					</div>
+						<label for="rutCliente">Rut de Cliente:</label> <select class="form-control"
+							id="rutCliente" name="rutCliente">
+							<option value="" disabled selected hidden>Selecciona un Rut de Cliente Existente</option>
+							<c:forEach var="client" items="${requestScope.clientes}">
+								<option value="${client.rutCliente}"><c:out value="${client.rutCliente}" /></option>
+							</c:forEach>
+							
+						</select>
 					<div class="form-group">
 						<label for="dia">Día:</label> <select class="form-control"
 							id="dia" name="dia">
