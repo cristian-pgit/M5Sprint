@@ -29,7 +29,7 @@ public class Contacto {
 				"\nE-mail: " + email + 
 				"\nTelefono: " + telefono + 
 				"\nMensaje:" + mensaje+
-				"---------------------------------------";
+				"\n---------------------------------------";
 	}
 
 	public String getApellidos() {

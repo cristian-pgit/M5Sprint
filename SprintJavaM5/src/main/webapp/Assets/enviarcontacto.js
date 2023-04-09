@@ -72,18 +72,18 @@ $(document).ready(function() {
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, salvalo'
+			confirmButtonText: 'Si!, envialo'
 		}).then((result) => {
 			if (result.isConfirmed) {
 				Swal.fire(
 					'Salvado!',
-					'El Usuario ha sido generado.',
+					'El Correo ha sido Enviado.',
 					'success'
 				)
 				Swal.fire({
 					position: 'top-end',
 					icon: 'success',
-					title: 'Usuario enviado',
+					title: 'Correo Enviado',
 					showConfirmButton: false,
 					timer: 1500
 				})
