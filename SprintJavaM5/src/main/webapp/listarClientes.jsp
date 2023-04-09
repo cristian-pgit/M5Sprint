@@ -23,52 +23,56 @@
 	</c:if>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<br>
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<h1 class="text-center py-3">Listado de Clientes</h1>
 		<br>
-		<table>
-			<thead>
-				<tr>
-					<th>ID de Usuario</th>
-					<th>Nombre de Usuario</th>
-					<th>Fecha de Nacimiento</th>
-					<th>RUN</th>
-					<th>RUT de Cliente</th>
-					<th>Nombres</th>
-					<th>Apellidos</th>
-					<th>Telefono</th>
-					<th>AFP</th>
-					<th>Sist. Salud</th>
-					<th>Direccion</th>
-					<th>Comuna</th>
-					<th>Edad</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="client" items="${requestScope.clientes}">
+		<div class="table-responsive">
+			<table>
+				<thead>
 					<tr>
-						<td><c:out value="${client.idUsuario}" /></td>
-						<td><c:out value="${client.userName}" /></td>
-						<td><fmt:formatDate value="${client.fNacimiento}" pattern="dd/MM/yyyy"/></td>
-						<td><c:out value="${client.run}" /></td>
-						<td><c:out value="${client.rutCliente}" /></td>
-						<td><c:out value="${client.nombres}" /></td>
-						<td><c:out value="${client.apellidos}" /></td>
-						<td><c:out value="${client.fono}" /></td>
-						<td><c:out value="${client.afp}" /></td>
-						<td><c:choose>
-								<c:when test="${client.sds == 1}">Fonasa</c:when>
-								<c:when test="${client.sds == 2}">Isapre</c:when>
-								<c:otherwise>Otro</c:otherwise>
-							</c:choose></td>
-						<td><c:out value="${client.direccion}" /></td>
-						<td><c:out value="${client.comuna}" /></td>
-						<td><c:out value="${client.edad}" /></td>
+						<th>ID de Usuario</th>
+						<th>Nombre de Usuario</th>
+						<th>Fecha de Nacimiento</th>
+						<th>RUN</th>
+						<th>RUT de Cliente</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Telefono</th>
+						<th>AFP</th>
+						<th>Sist. Salud</th>
+						<th>Direccion</th>
+						<th>Comuna</th>
+						<th>Edad</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach var="client" items="${requestScope.clientes}">
+						<tr>
+							<td><c:out value="${client.idUsuario}" /></td>
+							<td><c:out value="${client.userName}" /></td>
+							<td><fmt:formatDate value="${client.fNacimiento}"
+									pattern="dd/MM/yyyy" /></td>
+							<td><c:out value="${client.run}" /></td>
+							<td><c:out value="${client.rutCliente}" /></td>
+							<td><c:out value="${client.nombres}" /></td>
+							<td><c:out value="${client.apellidos}" /></td>
+							<td><c:out value="${client.fono}" /></td>
+							<td><c:out value="${client.afp}" /></td>
+							<td><c:choose>
+									<c:when test="${client.sds == 1}">Fonasa</c:when>
+									<c:when test="${client.sds == 2}">Isapre</c:when>
+									<c:otherwise>Otro</c:otherwise>
+								</c:choose></td>
+							<td><c:out value="${client.direccion}" /></td>
+							<td><c:out value="${client.comuna}" /></td>
+							<td><c:out value="${client.edad}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		
 	</div>
 
 	<script

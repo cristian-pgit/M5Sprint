@@ -28,7 +28,7 @@
 	<jsp:include page="nav.jsp"></jsp:include>
 
 	<h1 class="text-center" id="titulo1">Bitte Dans Les Yeux</h1>
-	<section style="text-align: center;" class="extract">
+
 
 		<div>
 			<p class="text-center">Empresa de asesorías en prevención de
@@ -37,8 +37,8 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-8">
+				<div class="col-2 col-sm-0"></div>
+				<div class="col-8 col-md-8">
 					<div id="carouselExampleAutoplaying" class="carousel slide"
 						data-bs-ride="carousel">
 						<div class="carousel-inner">

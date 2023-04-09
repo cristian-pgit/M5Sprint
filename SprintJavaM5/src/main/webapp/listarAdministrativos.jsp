@@ -27,30 +27,34 @@
 		<br>
 		<h1 class="text-center py-3">Listado de Administrativos</h1>
 		<br>
-		<table>
-			<thead>
-				<tr>
-					<th>ID de Usuario</th>
-					<th>Nombre de Usuario</th>
-					<th>Fecha de Nacimiento</th>
-					<th>RUN</th>
-					<th>Area</th>
-					<th>Experiencia Previa</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="admin" items="${requestScope.adms}">
+		<div class="table-responsive-sm">
+			<table class="table">
+				<thead>
 					<tr>
-						<td><c:out value="${admin.idUsuario}" /></td>
-						<td><c:out value="${admin.userName}" /></td>
-						<td><fmt:formatDate value="${admin.fNacimiento}" pattern="dd/MM/yyyy"/></td>
-						<td><c:out value="${admin.run}" /></td>
-						<td><c:out value="${admin.area}" /></td>
-						<td><c:out value="${admin.expPre}" /></td>
+						<th>ID de Usuario</th>
+						<th>Nombre de Usuario</th>
+						<th>Fecha de Nacimiento</th>
+						<th>RUN</th>
+						<th>Area</th>
+						<th>Experiencia Previa</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach var="admin" items="${requestScope.adms}">
+						<tr>
+							<td><c:out value="${admin.idUsuario}" /></td>
+							<td><c:out value="${admin.userName}" /></td>
+							<td><fmt:formatDate value="${admin.fNacimiento}"
+									pattern="dd/MM/yyyy" /></td>
+							<td><c:out value="${admin.run}" /></td>
+							<td><c:out value="${admin.area}" /></td>
+							<td><c:out value="${admin.expPre}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		
 	</div>
 
 	<script

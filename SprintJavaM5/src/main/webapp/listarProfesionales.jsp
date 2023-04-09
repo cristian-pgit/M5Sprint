@@ -27,30 +27,35 @@
 		<br>
 		<h1 class="text-center py-3">Listado de Profesionales</h1>
 		<br>
-		<table>
-			<thead>
-				<tr>
-					<th>ID de Usuario</th>
-					<th>Nombre de Usuario</th>
-					<th>Fecha de Nacimiento</th>
-					<th>RUN</th>
-					<th>Titulo</th>
-					<th>Fecha de Ingreso</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="pros" items="${requestScope.pros}">
+		<div class="table-responsive-sm">
+			<table class="table">
+				<thead>
 					<tr>
-						<td><c:out value="${pros.idUsuario}" /></td>
-						<td><c:out value="${pros.userName}" /></td>
-						<td><fmt:formatDate value="${pros.fNacimiento}" pattern="dd/MM/yyyy"/></td>
-						<td><c:out value="${pros.run}" /></td>
-						<td><c:out value="${pros.titulo}" /></td>
-						<td><fmt:formatDate value="${pros.fechaIng}" pattern="dd/MM/yyyy"/></td>
+						<th>ID de Usuario</th>
+						<th>Nombre de Usuario</th>
+						<th>Fecha de Nacimiento</th>
+						<th>RUN</th>
+						<th>Titulo</th>
+						<th>Fecha de Ingreso</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach var="pros" items="${requestScope.pros}">
+						<tr>
+							<td><c:out value="${pros.idUsuario}" /></td>
+							<td><c:out value="${pros.userName}" /></td>
+							<td><fmt:formatDate value="${pros.fNacimiento}"
+									pattern="dd/MM/yyyy" /></td>
+							<td><c:out value="${pros.run}" /></td>
+							<td><c:out value="${pros.titulo}" /></td>
+							<td><fmt:formatDate value="${pros.fechaIng}"
+									pattern="dd/MM/yyyy" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		
 	</div>
 
 	<script
