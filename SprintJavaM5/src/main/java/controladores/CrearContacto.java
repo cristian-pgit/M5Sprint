@@ -41,6 +41,7 @@ public class CrearContacto extends HttpServlet {
 		Contacto cont= setContacto(request);
 		try {
 			agregarContacto(cont);
+			System.out.println(cont);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,6 +76,7 @@ public class CrearContacto extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		
 		
 		return cont;
 	}

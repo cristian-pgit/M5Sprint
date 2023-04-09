@@ -20,6 +20,18 @@ public class Contacto {
 		this.nombres = nombres;
 	}
 
+	@Override
+	public String toString() {
+		return  "---------------------------------------"+
+				"\nNuevo Correo: "
+				+ "\nNombre Remitente: " + nombres + 
+				"\nApellido Remitente: " + apellidos + 
+				"\nE-mail: " + email + 
+				"\nTelefono: " + telefono + 
+				"\nMensaje:" + mensaje+
+				"---------------------------------------";
+	}
+
 	public String getApellidos() {
 		return apellidos;
 	}
