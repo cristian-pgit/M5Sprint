@@ -195,4 +195,14 @@
     <servlet-name>CrearCapacitacion</servlet-name>
     <url-pattern>/CrearCapacitacion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description>se lleva la lista de Id existentes</description>
+    <display-name>PCrearUsuario</display-name>
+    <servlet-name>PCrearUsuario</servlet-name>
+    <servlet-class>controladores.PCrearUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PCrearUsuario</servlet-name>
+    <url-pattern>/PCrearUsuario</url-pattern>
+  </servlet-mapping>
 </web-app>

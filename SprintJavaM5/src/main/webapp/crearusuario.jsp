@@ -31,7 +31,6 @@
 		<c:redirect url="/" />
 	</c:if>
 
-
 	<div class="container">
 		<div class="row">
 			<div class="col-4"></div>
@@ -39,21 +38,24 @@
 				<br>
 				<h1 class="h3 mb-3 fw-normal text-center">Crear Usuario</h1>
 
-				<form action="CrearUsuario" method="post">
+				<form class="was-validated" action="CrearUsuario" method="post">
 					<div class="form-group">
 						<label class="text-center" for="idUser">ID de Usuario: </label> <input
 							type="number" class="form-control" id="idUser" required
-							name="idUser">
+							name="idUser" onkeyup="verificarValor()">
+						<div class="invalid-feedback">Favor ingrese un valor</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="userName">Nombre de
 							Usuario: </label> <input type="text" class="form-control" id="userName"
 							required name="userName">
+							<div class="invalid-feedback"> Escriba un Nombre de Usuario</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="password">Password: </label> <input
-							type="text" class="form-control" id="password" required
+							type="password" class="form-control" id="password" required
 							name="password">
+							<div class="invalid-feedback">Ingrese un Password. Debe contener un simbolo y un numero al menos.</div>
 					</div>
 					<div class="form-group">
 						<label for="fechaNac">Fecha de Nacimiento:</label>
@@ -64,22 +66,25 @@
 								<span class="glyphicon glyphicon-th"></span>
 							</div>
 						</div>
+						<div class="invalid-feedback">Favor eliga una fecha</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="run">RUN (Rol Unico
 							Nacional):</label> <input type="number" class="form-control" id="run"
 							required name="run">
+							<div class="invalid-feedback"> Ingrese un RUN de 8 digitos sin puntos ni digito verificador</div>
 					</div>
 
 					<div class="form-group">
 						<label for="tipo">Perfil del Usuario:</label> <select
-							class="form-control" id="tipo" name="tipo"
+							class="form-select" required aria-label="select example" id="tipo" name="tipo"
 							onchange="displayFormFields()">
 							<option value="" disabled selected hidden>---Selecciona---</option>
 							<option value="cli">Cliente</option>
 							<option value="pro">Profesional</option>
 							<option value="adm">Administrativo</option>
 						</select>
+						<div class="invalid-feedback">Favor seleccione Perfil del usuario</div>
 					</div>
 					<br>
 
@@ -91,7 +96,7 @@
 					</div>
 					<div class="formulario d-none" id="formulario-adm">
 						<jsp:include page="crearadministrativo.jsp" />
-					
+
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary" id="save">Guardar</button>
@@ -111,6 +116,7 @@
 		crossorigin="anonymous"></script>
 	<script src="Assets/crearuser.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="Assets/idexistente.js"></script>
 	<script src="Assets/segperfil.js"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="CrearCapacitacion">Crear Capacitacion</a></li>
-            <li><a class="dropdown-item" href="crearusuario.jsp">Crear Usuario</a></li>
+            <li><a class="dropdown-item" href="PCrearUsuario">Crear Usuario</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

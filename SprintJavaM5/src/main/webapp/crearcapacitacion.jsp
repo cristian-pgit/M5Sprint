@@ -30,26 +30,28 @@
 				<br>
 				<h1 class="h3 mb-3 fw-normal text-center">Crear capacitación</h1>
 
-				<form action="CrearCapacitacion" method="post">
+				<form  class="was-validated" action="CrearCapacitacion" method="post">
 					<div class="form-group">
 						<label class="text-center" for="idCapacitacion">ID de
 							Capacitación:</label> <input type="number" class="form-control"
 							id="idCapacitacion" required name="idCapacitacion">
+							<div class="invalid-feedback">Favor ingrese un valor</div>
 					</div>
 				
 					<div class="form-group">
-						<label for="rutCliente">Rut de Cliente:</label> <select class="form-control"
+						<label for="rutCliente">Rut de Cliente:</label> <select class="form-select" required aria-label="select example"
 							id="rutCliente" name="rutCliente">
 							<option value="" disabled selected hidden>Selecciona un Rut de Cliente Existente</option>
 							<c:forEach var="client" items="${requestScope.clientes}">
-								<option value="${client.rutCliente}"><c:out value="${client.rutCliente}" /></option>
-							</c:forEach>
-							
+								<option value="${client.rutCliente}"><c:out value="${client.nombres}" />&nbsp;<c:out value="${client.apellidos}" />&nbsp;-&nbsp;<c:out value="${client.rutCliente}"/></option>
+							</c:forEach>	
 						</select>
-					<div class="form-group">
-						<label for="dia">Día:</label> <select class="form-control"
-							id="dia" name="dia">
-							<option value="novalue" disabled selected hidden>Selecciona un
+						<div class="invalid-feedback">Favor seleccione un RUT</div>
+					</div>
+					<div class="form-group" >
+						<label for="dia">Día:</label> 
+						<select class="form-select" required aria-label="select example" id="dia" name="dia" >
+							<option value="" disabled selected hidden>Selecciona un
 								día</option>
 							<option value="lunes">Lunes</option>
 							<option value="martes">Martes</option>
@@ -59,20 +61,23 @@
 							<option value="sabado">Sábado</option>
 							<option value="domingo">Domingo</option>
 						</select>
+						<div class="invalid-feedback">Favor seleccione un dia</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="hora">Hora (xx:xx):</label> <input
 							type="time" class="form-control" id="hora" name="hora" required
 							pattern="^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+							<div class="invalid-feedback">Favor ingrese una hora</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="lugar">Lugar:</label> <input
 							type="text" required class="form-control" id="lugar" name="lugar">
+							<div class="invalid-feedback">Favor ingrese una Locacion donde se impartira la Capacitacion</div>
 					</div>
 					<div class="form-group">
-						<label class="text-center" for="duracion">Duración:</label> <select class="form-control"
-							id="duracion" name="duracion">
-							<option value="novalue" disabled selected hidden>Selecciona duracion</option>
+						<label class="text-center" for="duracion">Duración:</label> 
+						<select class="form-select" required aria-label="select example" id="duracion" name="duracion" >
+							<option value="" disabled selected hidden>Selecciona duracion</option>
 							<option value="30">30 minutos</option>
 							<option value="60">1 Hora</option>
 							<option value="90">1 Hora 30 minutos</option>
@@ -82,11 +87,13 @@
 							<option value="210">3 Horas 30 Minutos </option>
 							<option value="240">4 Horas</option>
 						</select>
+						<div class="invalid-feedback">Favor seleccione duracion</div>
 					</div>
 					<div class="form-group">
 						<label class="text-center" for="cantAsist">Cantidad de
 							Asistentes:</label> <input type="number" class="form-control"
 							id="cantAsist" required name="cantAsist">
+							<div class="invalid-feedback">Favor indique Cantidad de Asistentes esperados</div>
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary" id="save">Guardar</button>
