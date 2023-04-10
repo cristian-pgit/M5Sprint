@@ -105,7 +105,7 @@ Cargar el archivo WAR en una instancia local del servidor Tomcat.
 
 Ejecutar la plataforma ingresando directamente desde el navegador a la dirección de Tomcat.
 
-##SPRINT
+## SPRINT
 
 Actualizar los componentes del caso de uso “Crear Usuario”, permitiendo que se pueda
 registrar un usuario en la base de datos. Considere que un usuario puede ser un cliente,
