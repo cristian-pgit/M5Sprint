@@ -74,7 +74,7 @@
 				<br>
 					<h1 class="subtitulo1">Servicios</h1>
 				</b>
-				<div>
+				<div class="text-center">
 					<p>Esta es una empresa de asesorías en prevención de riesgos
 						que ofrece los siguientes servicios:</p>
 					<br>

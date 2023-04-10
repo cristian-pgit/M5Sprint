@@ -125,6 +125,5 @@
 	<script src="Assets/crearuser.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="Assets/idexistente.js"></script>
-	<script src="Assets/segperfil.js"></script>
 </body>
 </html>
