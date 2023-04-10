@@ -3,5 +3,5 @@
  */
 
   setTimeout(function() {
-        window.location.href = '/ABPRO5/';
+        window.location.href = '/SprintJavaM5/';
     }, 2500);

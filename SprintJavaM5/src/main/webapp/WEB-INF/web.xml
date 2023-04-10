@@ -225,4 +225,44 @@
     <servlet-name>EditarCliente</servlet-name>
     <url-pattern>/EditarCliente</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PUddProfesionales</display-name>
+    <servlet-name>PUddProfesionales</servlet-name>
+    <servlet-class>controladores.PUddProfesionales</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PUddProfesionales</servlet-name>
+    <url-pattern>/PUddProfesionales</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarProfesional</display-name>
+    <servlet-name>EditarProfesional</servlet-name>
+    <servlet-class>controladores.EditarProfesional</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarProfesional</servlet-name>
+    <url-pattern>/EditarProfesional</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PUpdAdministrativo</display-name>
+    <servlet-name>PUpdAdministrativo</servlet-name>
+    <servlet-class>controladores.PUpdAdministrativo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PUpdAdministrativo</servlet-name>
+    <url-pattern>/PUpdAdministrativo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarAdministrativo</display-name>
+    <servlet-name>EditarAdministrativo</servlet-name>
+    <servlet-class>controladores.EditarAdministrativo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarAdministrativo</servlet-name>
+    <url-pattern>/EditarAdministrativo</url-pattern>
+  </servlet-mapping>
 </web-app>

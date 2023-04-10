@@ -38,19 +38,16 @@
 				<br>
 				<h1 class="h3 mb-3 fw-normal text-center">Editar Cliente</h1>
 
-				<form class="was-validated" action="EditarCliente" method="post">
+				<form class="was-validated" action="EditarAdministrativo" method="post">
 
 					<div class="form-group">
-						<label for="idUser">Id de Usuario a Editar</label> <select
+						<label for="idUser">Id de Administrativo a Editar</label> <select
 							class="form-select" required aria-label="select example"
 							id="idUser" name="idUser">
 							<option value="" disabled selected hidden>Selecciona un
 								Cliente a Editar</option>
-							<c:forEach var="client" items="${requestScope.clientes}">
-								<option value="${client.idUsuario}"><c:out
-										value="${client.nombres}" />&nbsp;
-									<c:out value="${client.apellidos}" />&nbsp;-&nbsp;
-									<c:out value="${client.idUsuario}" /></option>
+							<c:forEach var="adm" items="${requestScope.adms}">
+								<option value="${adm.idUsuario}"><c:out value="${adm.userName}" />&nbsp;-&nbsp; <c:out value="${adm.idUsuario}" /></option>
 							</c:forEach>
 						</select>
 						<div class="invalid-feedback">Favor seleccione Cliente a

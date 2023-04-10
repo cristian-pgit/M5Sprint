@@ -33,8 +33,8 @@
             <li><a class="dropdown-item" href="#">Editar Capacitacion</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item " href="PUpdCliente">Editar Cliente</a></li>
-            <li><a class="dropdown-item " href="#">Editar Profesional</a></li>
-            <li><a class="dropdown-item " href="#">Editar Administrativo</a></li>
+            <li><a class="dropdown-item " href="PUddProfesionales">Editar Profesional</a></li>
+            <li><a class="dropdown-item " href="PUpdAdministrativo">Editar Administrativo</a></li>
           </ul>
         </li>
          <li class="nav-item dropdown"> 

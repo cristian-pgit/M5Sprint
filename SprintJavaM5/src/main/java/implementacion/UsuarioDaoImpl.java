@@ -178,9 +178,20 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 	}
 
 	@Override
-	public int updateAdministrativo(Administrativo administrativo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void updateAdministrativo(Administrativo administrativo, int idUsuario) {
+		String sqla = "UPDATE administrativo SET area=?, experiencia_previa=? WHERE id_administrativo=?";
+		initConnection();
+		try {
+			conn = SingletonImnot.getConnection();
+			st = conn.prepareStatement(sqla);
+			st.setString(1, administrativo.getArea());
+			st.setInt(2, administrativo.getExpPre());
+			st.setInt(3, idUsuario);
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -244,9 +255,20 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 	}
 
 	@Override
-	public int updateProfesional(Profesional profesional) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void updateProfesional(Profesional profesional, int idUsuario) {
+		String sqlp = "UPDATE profesional SET titulo_profesional=?, fechaIngreso=? WHERE id_profesional=?";
+		initConnection();
+		try {
+			conn = SingletonImnot.getConnection();
+			st = conn.prepareStatement(sqlp);
+			st.setString(1, profesional.getTitulo());
+			st.setDate(2, new java.sql.Date(profesional.getFechaIng().getTime()));
+			st.setInt(3, idUsuario);
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

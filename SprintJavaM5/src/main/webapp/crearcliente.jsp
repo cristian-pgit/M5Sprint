@@ -24,9 +24,9 @@
 			<div class="invalid-feedback">Favor ingrese Telefono de contacto</div>
 	</div>
 	<div class="form-group">
-		<label for="afp">AFP:</label> <select class="form-control" id="afp"
+		<label for="afp">AFP:</label> <select class="form-select" required aria-label="select example" id="afp"
 			name="afp">
-			<option value="novalue" disabled selected hidden>Selecciona
+			<option value="" disabled selected hidden>Selecciona
 				una AFP</option>
 			<option value="CUPRUM">AFP CUPRUM</option>
 			<option value="Habitat">AFP Habitat</option>
@@ -40,8 +40,8 @@
 	</div>
 	<div class="form-group">
 		<label for="publicPrivado">Sistema de Salud:</label> <select
-			class="form-control" id="publicPrivado" name="publicPrivado">
-			<option value="novalue" disabled selected hidden>Selecciona
+			class="form-select" required aria-label="select example" id="publicPrivado" name="publicPrivado">
+			<option value="" disabled selected hidden>Selecciona
 				Sistema</option>
 			<option value="1">Fonasa</option>
 			<option value="2">Isapre</option>
