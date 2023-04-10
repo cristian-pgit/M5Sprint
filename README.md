@@ -127,7 +127,9 @@ llamar a un método que despliegue los datos ingresados a través de la consola 
 - Kevin Moreno
 - Benjamin Pavez
 
-Link al repositorio
+### Link al repositorio
+| GIT | Integrante |
+|-----|----------|
 |https://github.com/cristian-pgit/M5Sprint.git | Cristian |
 |https://github.com/Benjaimico/SprintJava5.git | Benja |
 |https://github.com/kmra00/M5Sprint | Kevin |
