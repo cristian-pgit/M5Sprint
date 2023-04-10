@@ -7,6 +7,7 @@
 	<div class="form-group">
 		<label class="text-center" for="titulo">Titulo Profesional: </label> <input
 			type="text" class="form-control" id="titulo" required name="titulo">
+			<div class="invalid-feedback">Favor ingrese Titulo Profesional</div>
 	</div>
 	<div class="form-group">
 		<label for="fechaIng">Fecha de Ingreso:</label>
@@ -16,6 +17,7 @@
 			<div class="input-group-addon">
 				<span class="glyphicon glyphicon-th"></span>
 			</div>
+			<div class="invalid-feedback">Favor ingrese Fecha de Ingreso a la compañia</div>
 		</div>
 	</div>
 	<br>

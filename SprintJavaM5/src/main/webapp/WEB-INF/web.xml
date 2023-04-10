@@ -205,4 +205,24 @@
     <servlet-name>PCrearUsuario</servlet-name>
     <url-pattern>/PCrearUsuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PUpdCliente</display-name>
+    <servlet-name>PUpdCliente</servlet-name>
+    <servlet-class>controladores.PUpdCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PUpdCliente</servlet-name>
+    <url-pattern>/PUpdCliente</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarCliente</display-name>
+    <servlet-name>EditarCliente</servlet-name>
+    <servlet-class>controladores.EditarCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarCliente</servlet-name>
+    <url-pattern>/EditarCliente</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -88,9 +88,22 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 	}
 
 	@Override
-	public int updateUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void updateUsuario(Usuario usuario, int idUsuario) {
+		String sqlu = "UPDATE usuario SET userName=?, password=?, fNacimiento=?, run=? WHERE idUsuario=?";
+		initConnection();
+		try {
+			conn = SingletonImnot.getConnection();
+			st = conn.prepareStatement(sqlu);
+			st.setString(1, usuario.getUserName());
+			st.setString(2, usuario.getPassword());
+			st.setDate(3, new java.sql.Date(usuario.getfNacimiento().getTime()));
+			st.setInt(4, usuario.getRun());
+			st.setInt(5, idUsuario);
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -304,9 +317,27 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 	}
 
 	@Override
-	public int updateCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void updateCliente(Cliente cliente, int idUsuario) {
+		String sqlc = "UPDATE cliente SET RutCliente=?, Nombres=?, Apellidos=?, telefono=?, Afp=?, SistemaDeSalud=?, Direccion=?, Comuna=?, Edad=? WHERE id_Usuario=?";
+		initConnection();
+		try {
+			conn = SingletonImnot.getConnection();
+			st = conn.prepareStatement(sqlc);
+			st.setInt(1, cliente.getRutCliente());
+			st.setString(2, cliente.getNombres());
+			st.setString(3, cliente.getApellidos());
+			st.setInt(4, cliente.getFono());
+			st.setString(5, cliente.getAfp());
+			st.setInt(6, cliente.getSds());
+			st.setString(7, cliente.getDireccion());
+			st.setString(8, cliente.getComuna());
+			st.setInt(9, cliente.getEdad());
+			st.setInt(10, idUsuario);
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -334,4 +365,5 @@ public class UsuarioDaoImpl implements UsuarioDAO, ClienteDAO, ProfesionalDAO, A
 		}
 		
 	}
+
 }
