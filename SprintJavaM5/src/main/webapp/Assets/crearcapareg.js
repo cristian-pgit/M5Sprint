@@ -14,6 +14,17 @@ $(document).ready(function() {
 			});
 			return false;
 		}
+		
+		// Validar que la Capa tenga nombre
+		let nomCapa = $('#nomCapa').val();
+		if (nomCapa === '' || nomCapa <= 0) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Debe ingresar un nombre para la capacitacion.',
+			})
+			return false;
+		}
 
 		// Validar que el RUT de Cliente sea un número positivo
 		let rutCliente = $('#rutCliente').val();
@@ -66,7 +77,7 @@ $(document).ready(function() {
 		}
 
 
-		// Validar que la duración sea un número positivo
+		// Validar que lugar tenga datos
 		let lugar = $('#lugar').val();
 		if (lugar === '' || lugar <= 0) {
 			Swal.fire({

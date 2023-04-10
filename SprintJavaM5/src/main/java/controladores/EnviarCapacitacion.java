@@ -59,7 +59,8 @@ public class EnviarCapacitacion extends HttpServlet {
 		String lugar = request.getParameter("lugar");
 		String duracion = request.getParameter("duracion");
 		String cantAsist = request.getParameter("cantAsist");
-		if(idCapa == null||rutCliente ==null|| hora==null||lugar==null||duracion==null||cantAsist==null) {
+		String nomCapa = request.getParameter("nomCapa");
+		if(idCapa == null||rutCliente ==null|| hora==null||lugar==null||duracion==null||cantAsist==null||nomCapa ==null) {
 			System.out.println("formulario con campos vacio");	
 		} else {
 			cap = new Capacitacion();
@@ -71,6 +72,7 @@ public class EnviarCapacitacion extends HttpServlet {
 				cap.setLugar(lugar);
 				cap.setDuracion(Integer.parseInt(duracion));
 				cap.setCantAsist(Integer.parseInt(cantAsist));
+				cap.setNomCapa(nomCapa);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

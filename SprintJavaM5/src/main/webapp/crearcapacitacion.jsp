@@ -37,6 +37,11 @@
 							id="idCapacitacion" required name="idCapacitacion">
 							<div class="invalid-feedback">Favor ingrese un valor</div>
 					</div>
+					<div class="form-group">
+						<label class="text-center" for="nomCapa">Nombre de la Capacitacion:</label> <input
+							type="text" required class="form-control" id="nomCapa" name="nomCapa">
+							<div class="invalid-feedback">Favor ingrese nombre Capacitacion</div>
+					</div>
 				
 					<div class="form-group">
 						<label for="rutCliente">Rut de Cliente:</label> <select class="form-select" required aria-label="select example"

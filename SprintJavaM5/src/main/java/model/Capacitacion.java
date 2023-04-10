@@ -11,6 +11,7 @@ public class Capacitacion extends Usuario {
 	private String lugar;
 	private int duracion;
 	private int cantAsist;
+	private String nomCapa;
 	
 	
 	public int getIdCapacitacion() {
@@ -59,6 +60,12 @@ public class Capacitacion extends Usuario {
 	public String toString() {
 		return "Capacitacion [idCapacitacion=" + idCapacitacion + ", rutCliente=" + rutCliente + ", dia=" + dia
 				+ ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion + ", cantAsist=" + cantAsist + "]";
+	}
+	public String getNomCapa() {
+		return nomCapa;
+	}
+	public void setNomCapa(String nomCapa) {
+		this.nomCapa = nomCapa;
 	}
 	
 	

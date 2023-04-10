@@ -33,6 +33,7 @@
 			<thead>
 				<tr>
 					<th>ID de Capacitación</th>
+					<th>Nombre de la Capacitacion</th>
 					<th>RUT de Cliente</th>
 					<th>Día</th>
 					<th>Hora</th>
@@ -45,6 +46,7 @@
 				<c:forEach var="capacit" items="${requestScope.capacitaciones}">
 					<tr>
 						<td><c:out value="${capacit.idCapacitacion}" /></td>
+						<td><c:out value="${capacit.nomCapa}" /></td>
 						<td><c:out value="${capacit.rutCliente}" /></td>
 						<td><c:out value="${capacit.dia}" /></td>
 						<td><c:out value="${capacit.hora}" /></td>

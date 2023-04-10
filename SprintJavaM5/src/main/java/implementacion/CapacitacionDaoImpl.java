@@ -69,6 +69,7 @@ public class CapacitacionDaoImpl implements CapacitacionDAO{
 				cap.setLugar(rs.getString(5));
 				cap.setDuracion(rs.getInt(6));
 				cap.setCantAsist(rs.getInt(7));
+				cap.setNomCapa(rs.getString(8));
 				capacitaciones.add(cap);
 			}
 			//conn.close(); //debido a que es una unica instancia, no seria necesario estar cerrando la conexion
@@ -97,7 +98,7 @@ public class CapacitacionDaoImpl implements CapacitacionDAO{
 
 	@Override
 	public void insertCapacitacion(Capacitacion capacitacion) {
-		String sql = "INSERT INTO capacitacion (idcapacitacion, rut_Cliente, dia, hora, lugar, duracion, cantAsistentes) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO capacitacion (idcapacitacion, rut_Cliente, dia, hora, lugar, duracion, cantAsistentes, nombre_capacitacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		initConnection();
 		try 
 		{
@@ -110,6 +111,7 @@ public class CapacitacionDaoImpl implements CapacitacionDAO{
 			st.setString(5, capacitacion.getLugar());
 			st.setInt(6, capacitacion.getDuracion());
 			st.setInt(7, capacitacion.getCantAsist());
+			st.setString(8, capacitacion.getNomCapa());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
