@@ -1,4 +1,3 @@
-# M5Sprint
 Trabajo grupal modulo 5
 
 Una empresa de asesorías en prevención de riesgos necesita contar con un sistema de información que le permita administrar los principales procesos que se llevan a cabo en ella día a día
@@ -105,7 +104,7 @@ Cargar el archivo WAR en una instancia local del servidor Tomcat.
 
 Ejecutar la plataforma ingresando directamente desde el navegador a la dirección de Tomcat.
 
-## SPRINT
+SPRINT
 
 Actualizar los componentes del caso de uso “Crear Usuario”, permitiendo que se pueda
 registrar un usuario en la base de datos. Considere que un usuario puede ser un cliente,
@@ -120,17 +119,18 @@ Actualizar el servlet correspondiente al caso de uso “Contacto”. En este cas
 debe desplegar el formulario de contacto; una vez que se procese el formulario, se debe
 llamar a un método que despliegue los datos ingresados a través de la consola de Java.
 
-## Integrantes
+Integrantes
 
-- Cristian Carrillo
-- Priscila Carrillo
-- Kevin Moreno
-- Benjamin Pavez
+Cristian Carrillo
+Priscila Carrillo
+Kevin Moreno
+Benjamin Pavez
 
-### Link al repositorio
-| GIT | Integrante |
-|-----|----------|
-|https://github.com/cristian-pgit/M5Sprint.git | Cristian |
-|https://github.com/Benjaimico/SprintJava5.git | Benja |
-|https://github.com/kmra00/M5Sprint | Kevin |
-|https://github.com/PriscilaCarrillo/Sprintmod5 | Priscila |
+Link al repositorio
+https://github.com/cristian-pgit/M5Sprint.git - Cristian
+https://github.com/Benjaimico/SprintJava5.git - Benja
+https://github.com/kmra00/M5Sprint - Kevin
+https://github.com/PriscilaCarrillo/Sprintmod5 - Priscila
+
+
+
