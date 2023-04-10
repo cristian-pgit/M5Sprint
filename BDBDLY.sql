@@ -39,7 +39,7 @@ CREATE TABLE `administrativo` (
 
 LOCK TABLES `administrativo` WRITE;
 /*!40000 ALTER TABLE `administrativo` DISABLE KEYS */;
-INSERT INTO `administrativo` VALUES (6,'Copuchento',6);
+INSERT INTO `administrativo` VALUES (6,'Testigo',2);
 /*!40000 ALTER TABLE `administrativo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,6 +58,7 @@ CREATE TABLE `capacitacion` (
   `lugar` varchar(45) DEFAULT NULL,
   `duracion` int DEFAULT NULL,
   `cantAsistentes` int DEFAULT NULL,
+  `nombre_capacitacion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcapacitacion`,`rut_Cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -68,7 +69,7 @@ CREATE TABLE `capacitacion` (
 
 LOCK TABLES `capacitacion` WRITE;
 /*!40000 ALTER TABLE `capacitacion` DISABLE KEYS */;
-INSERT INTO `capacitacion` VALUES (1,11111111,'Lunes','13:00:00','UNAB Sala 304',30,15),(2,11111112,'Lunes','15:00:00','UNAB Sala 503',120,20),(3,11222333,'Martes','15:30','UNAB - Sala 602',120,25),(23,11222333,'miercoles','21:00','UNAB - Sala 602',180,45);
+INSERT INTO `capacitacion` VALUES (1,11111111,'Lunes','13:00:00','UNAB Sala 304',30,15,'Uso de Extintores'),(2,11111112,'Lunes','15:00:00','UNAB Sala 503',120,20,'Protocolos de Seguridad'),(3,11222333,'Martes','15:30','UNAB - Sala 602',120,25,'Higiene en el Trabajo'),(23,11222333,'miercoles','21:00','UNAB - Sala 602',180,45,'Protocolo Sismos');
 /*!40000 ALTER TABLE `capacitacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +102,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'11111111','Casimiro','Lahoja',12341243,'Modelo',1,'La Vecindad','Stgo',34),(2,'22111222','Flor','Ilabaca Zepeda',12341234,'PlanVital',2,'ElCampoLindo 302','Stgo',43),(4,'22333444','Gilberto','Bizama',12341234,'Habitat',1,'eben ezer 502','Viña',48);
+INSERT INTO `cliente` VALUES (1,'11111111','Casimiro','Lahoja',12341243,'Modelo',1,'La Vecindad','Stgo',34),(2,'55111222','Flor','Ilabaca',12341234,'Habitat',2,'El Campo con Flores 203','Stgo',65),(4,'22333444','Gilberto','Bizama',12341234,'Habitat',1,'eben ezer 502','Viña',48);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +128,7 @@ CREATE TABLE `contacto` (
 
 LOCK TABLES `contacto` WRITE;
 /*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
-INSERT INTO `contacto` VALUES ('Cristian','Carrillo','naitsircl@gmail.com','46545750','dasd'),('Cristian','Carrillo','naitsircl@gmail.com','46545750','asdadsd'),('Cristian','Carrillo','naitsircl@gmail.com','46545750','probando contacto');
+INSERT INTO `contacto` VALUES ('Cristian','Carrillo','naitsircl@gmail.com','46545750','dasd'),('Cristian','Carrillo','naitsircl@gmail.com','46545750','asdadsd'),('Cristian','Carrillo','naitsircl@gmail.com','46545750','probando contacto'),('elza','pato','elza@pato.cl','12341234','vendo zapatos'),('ElZapa','Tero','elzapato@roto.cl','12341234','arreglo zapatos');
 /*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +154,7 @@ CREATE TABLE `profesional` (
 
 LOCK TABLES `profesional` WRITE;
 /*!40000 ALTER TABLE `profesional` DISABLE KEYS */;
-INSERT INTO `profesional` VALUES (5,'Prevencionista','2022-08-04');
+INSERT INTO `profesional` VALUES (5,'PrevencionistaDC','2025-03-04'),(7,'Testigo de Jeova','2025-03-04');
 /*!40000 ALTER TABLE `profesional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +182,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'PedroMillones','pedro100%','1986-01-18',11111111,'Cliente'),(2,'FlordelCampoDulce','cliente100%2','1989-08-04',11222333,'Cliente'),(3,'SuperAdmin','pass100%','1986-01-18',16233090,'Administrativo'),(4,'SoyunCliente','cliente100%','1989-08-04',11222333,'Cliente'),(5,'SoyunProfesional','administrativo100%','1978-05-03',12344555,'pro'),(6,'SoyunAdministrativo','administrativo100%','1984-05-03',21333444,'adm');
+INSERT INTO `usuario` VALUES (1,'PedroMillones','pedro100%','1986-01-18',11111111,'Cliente'),(2,'FlorZepedaFeo','cliente100%p','1987-06-01',11222333,'Cliente'),(3,'SuperAdmin','pass100%','1986-01-18',16233090,'Administrativo'),(4,'SoyunCliente','cliente100%','1989-08-04',11222333,'Cliente'),(5,'SoyPrevencionista','100%prevencionista','1998-01-04',33222111,'pro'),(6,'AdminWinner','100%admin','1997-07-04',22111333,'adm'),(7,'testigo fiel','100%fial a dios','2024-08-04',22333444,'pro');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -194,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-09 22:01:22
+-- Dump completed on 2023-04-10 13:42:15
