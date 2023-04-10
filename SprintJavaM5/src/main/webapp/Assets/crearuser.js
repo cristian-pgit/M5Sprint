@@ -9,12 +9,12 @@ $(document).ready(function() {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
-				text: 'El ID de Ususario debe ser un número positivo.',
+				text: 'El ID de Usuario debe ser un número positivo.',
 				footer: 'Intente de nuevo.\nSe le aconseja ver el numero del ultimo usuario'
 			});
 			return false;
 		}
-
+		
 		// Validar que se escriba un nombre de usuario
 		let userName = $('#userName').val();
 		if (userName == null || userName == '' || userName.length < 10) {
@@ -26,13 +26,13 @@ $(document).ready(function() {
 			return false;
 		}
 
-		// Validar que se escriba un nombre de usuario
+		// Validar que se escriba una contraseña
 		let password = $('#password').val();
 		if (password == null || password == '' || !password.match(/^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>\/?])(?=.*[0-9]).{8,}$/)) {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
-				text: 'El password debe contener al mentos 8 digitos, y debe contener al menos un numero y un simbolo.',
+				text: 'El password debe contener al menos 8 digitos, y debe contener al menos un numero y un simbolo.',
 			})
 			return false;
 		}
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
-				text: 'Debe seleccionar un fecha de nacimiento',
+				text: 'Debe seleccionar una fecha de nacimiento',
 			});
 
 			return false;
@@ -73,18 +73,8 @@ $(document).ready(function() {
 			return false;
 		}
 		
-		// Validar que el RUT de Cliente sea un número positivo
-		let tipo = $('#tipo').val();
-		if (tipo === '' || tipo <= 0) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'Debe elegir un Perfil',
-				footer: 'No sea w.....'
-			});
-			return false;
-		}
-//Si el perfil es X, corrobora las campos correspondientes		
+		
+     //CLIENTE	
 		if (tipo === 'cli'){
 			// Validar que el RUT de Cliente sea un número positivo
 			let rutCliente = $('#rutCliente').val();
@@ -112,14 +102,86 @@ $(document).ready(function() {
 				Swal.fire({
 					icon: 'error',
 					title: 'Oops...',
+					text: 'Debe ingresar un nombre de cliente con 10 caracteres.',
+				})
+				return false;
+			}
+			
+		}
+		
+		//PROFESIONAL
+		if (tipo === 'pro'){
+			// Validar que el RUT de Cliente sea un número positivo
+			let rutProfesional = $('#rutProfesional').val();
+			if (rutProfesional === '' || rutProfesional <= 0) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUN del Profesional no puede estar vacio',
+					footer: 'Intente de nuevo.'
+				});
+				return false;
+			}
+			if (rutProfesional.length != 8) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUT del Profesional debe contener 8 digitos',
+					footer: 'Intente de nuevo.\nEl RUT debiera tener solo 8 digitos'
+				});
+				return false;
+			}
+			
+			// Validar que se escriba un nombre de usuario
+			let nombres = $('#nombres').val();
+			if (nombres == null || nombres == '' || nombres.length < 10) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
 					text: 'Debe ingresar un nombre de usuario con 10 caracteres.',
 				})
 				return false;
 			}
 			
 		}
-
-//aqu para abajo no se toca. Dispara confirmacion de formulario
+		
+		 //ADMINISTRATIVO	
+		if (tipo === 'adm'){
+			// Validar que el RUT de Cliente sea un número positivo
+			let rutAdministrativo = $('#rutAdministrativo').val();
+			if (rutAdministrativo === '' || rutAdministrativo <= 0) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUN del Administrativo no puede estar vacio',
+					footer: 'Intente de nuevo.'
+				});
+				return false;
+			}
+			if (rutAdministrativo.length != 8) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUT de Cliente debe contener 8 digitos',
+					footer: 'Intente de nuevo.\nEl RUT debiera tener solo 8 digitos'
+				});
+				return false;
+			}
+			// Validar que se escriba un nombre de usuario 
+			let nombres = $('#nombres').val();
+			if (nombres == null || nombres == '' || nombres.length < 10) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar un nombre de usuario con 10 caracteres.',
+				})
+				return false;
+			}
+			
+		}
+		
+		
+	    //aqui para abajo no se toca. Dispara confirmacion de formulario
 		Swal.fire({
 			title: 'Estas seguro?',
 			text: "No seras capas de modificar despues",
