@@ -84,7 +84,10 @@ $(document).ready(function() {
 			});
 			return false;
 		}
-//Si el perfil es X, corrobora las campos correspondientes		
+
+          // CLIENTE
+
+	
 		if (tipo === 'cli'){
 			// Validar que el RUT de Cliente sea un número positivo
 			let rutCliente = $('#rutCliente').val();
@@ -106,19 +109,150 @@ $(document).ready(function() {
 				});
 				return false;
 			}
+			
 			// Validar que se escriba un nombre de usuario
 			let nombres = $('#nombres').val();
 			if (nombres == null || nombres == '' || nombres.length < 10) {
 				Swal.fire({
 					icon: 'error',
 					title: 'Oops...',
-					text: 'Debe ingresar un nombre de usuario con 10 caracteres.',
+					text: 'Debe ingresar un nombre de usuario valido con 10 caracteres.',
 				})
 				return false;
 			}
 			
 		}
+		
+		// Validar que se ha ingresado un numero telefonico
+		
+		let telefono = $('#telefono').val();
+		console.log(telefono);
+		if (telefono === '' || telefono.length !=8) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Debe ingresar un numero de telefono valido (8 digitos y sin guion)',
+			});
 
+			return false;
+		}
+		
+		//Validar que se ha ingresado una afp valida
+		let afp = $('#afp').val();
+			if (afp == '' ) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Seleccione una afp entre las que se despliegan en la casilla.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado un sistema de salud
+		let publicPrivado = $('#publicPrivado').val();
+		if (publicPrivado == '' ) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Seleccione una opcion entre fonasa o isapre.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una direccion
+		let direccion = $('#direccion').val();
+			if (direccion== '') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una direccion valida.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una comuna
+		let comuna= $('#comuna').val();
+			if (comuna =='') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una Comuna.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una edad
+		let edad = $('#edad').val();
+			if (edad == '') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una edad.',
+				})
+				return false;
+			}
+			
+		
+	     // PROFESIONAL
+        
+        
+		//Validar que se ha ingresado un titulo
+		if (tipo === 'pro'){
+			let titulo= $('#titulo').val();
+				if (titulo =='') {
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Debe ingresar un titulo profesional.',
+					})
+					return false;
+				}
+			
+			//Validar que se ha ingresado una fecha de ingreso
+			let fechaIng= $('#fechaIng').val();
+				if (fechaIng =='') {
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Debe ingresar una Comuna.',
+					})
+					return false;
+				}
+				
+				
+			//Validar que se ha ingresado un area
+	   if (tipo === 'adm'){ 
+	        let area= $('#area').val();
+				if (area =='') {
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Debe ingresar un area.',
+					})
+					return false;
+			}
+		//Validar que se ha ingresado los años de experiencia previa
+        
+        let exppre= $('#exppre').val();
+			if (exppre =='') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar los años de experiencia previa.',
+				})
+				return false;
+			}
+		}	
+			
+	
 //aqu para abajo no se toca. Dispara confirmacion de formulario
 		Swal.fire({
 			title: 'Estas seguro?',
