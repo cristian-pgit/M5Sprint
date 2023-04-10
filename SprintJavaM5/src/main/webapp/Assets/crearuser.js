@@ -63,31 +63,6 @@ $(document).ready(function() {
 			return false;
 		}
 
-		if (run.length != 8) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'El RUN de Usuario debe contener 8 digitos',
-				footer: 'Intente de nuevo.\nEl RUN debiera tener solo 8 digitos'
-			});
-			return false;
-		}
-		
-		// Validar que el RUT de Cliente sea un número positivo
-		let tipo = $('#tipo').val();
-		if (tipo === '' || tipo <= 0) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'Debe elegir un Perfil',
-				footer: 'No sea w.....'
-			});
-			return false;
-		}
-
-          // CLIENTE
-
-	
 		if (tipo === 'cli'){
 			// Validar que el RUT de Cliente sea un número positivo
 			let rutCliente = $('#rutCliente').val();
@@ -121,7 +96,7 @@ $(document).ready(function() {
 				return false;
 			}
 			
-		}
+		
 		
 		// Validar que se ha ingresado un numero telefonico
 		
@@ -199,6 +174,7 @@ $(document).ready(function() {
 				})
 				return false;
 			}
+		}
 			
 		
 	     // PROFESIONAL
@@ -222,10 +198,12 @@ $(document).ready(function() {
 					Swal.fire({
 						icon: 'error',
 						title: 'Oops...',
-						text: 'Debe ingresar una Comuna.',
+						text: 'Debe ingresar una Fecha de Ingreso.',
 					})
 					return false;
 				}
+				
+		}
 				
 				
 			//Validar que se ha ingresado un area
@@ -286,3 +264,4 @@ $(document).ready(function() {
     });
     
     })
+    

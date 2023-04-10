@@ -86,34 +86,114 @@ $(document).ready(function() {
 		}
 		// Validar que el RUT de Cliente sea un número positivo
 		let rutCliente = $('#rutCliente').val();
-		if (rutCliente === '' || rutCliente <= 0) {
+			if (rutCliente === '' || rutCliente <= 0) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUN de Cliente no puede estar vacio',
+					footer: 'Intente de nuevo.'
+				});
+				return false;
+			}
+			if (rutCliente.length != 8) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'El RUT de Cliente debe contener 8 digitos',
+					footer: 'Intente de nuevo.\nEl RUT debiera tener solo 8 digitos'
+				});
+				return false;
+			}
+			
+			// Validar que se escriba un nombre de usuario
+			let nombres = $('#nombres').val();
+			if (nombres == null || nombres == '' || nombres.length < 10) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar un nombre de usuario valido con 10 caracteres.',
+				})
+				return false;
+			}
+			
+		
+		
+		// Validar que se ha ingresado un numero telefonico
+		
+		let telefono = $('#telefono').val();
+		console.log(telefono);
+		if (telefono === '' || telefono.length !=8) {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
-				text: 'El RUN de Cliente no puede estar vacio',
-				footer: 'Intente de nuevo.'
+				text: 'Debe ingresar un numero de telefono valido (8 digitos y sin guion)',
 			});
+
 			return false;
 		}
-		if (rutCliente.length != 8) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'El RUT de Cliente debe contener 8 digitos',
-				footer: 'Intente de nuevo.\nEl RUT debiera tener solo 8 digitos'
-			});
-			return false;
-		}
-		// Validar que se escriba un nombre de usuario
-		let nombres = $('#nombres').val();
-		if (nombres == null || nombres == '' || nombres.length < 10) {
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'Debe ingresar un nombre de usuario con 10 caracteres.',
-			})
-			return false;
-		}
+		
+		//Validar que se ha ingresado una afp valida
+		let afp = $('#afp').val();
+			if (afp == '' ) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Seleccione una afp entre las que se despliegan en la casilla.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado un sistema de salud
+		let publicPrivado = $('#publicPrivado').val();
+		if (publicPrivado == '' ) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Seleccione una opcion entre fonasa o isapre.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una direccion
+		let direccion = $('#direccion').val();
+			if (direccion== '') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una direccion valida.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una comuna
+		let comuna= $('#comuna').val();
+			if (comuna =='') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una Comuna.',
+				})
+				return false;
+			}
+			
+		
+		
+		//Validar que se ha ingresado una edad
+		let edad = $('#edad').val();
+			if (edad == '') {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Debe ingresar una edad.',
+				})
+				return false;
+			}
 			
 		
 

@@ -36,7 +36,7 @@
 			<div class="col-4"></div>
 			<div class="col-4 text-center">
 				<br>
-				<h1 class="h3 mb-3 fw-normal text-center">Editar Cliente</h1>
+				<h1 class="h3 mb-3 fw-normal text-center">Editar Administrativo</h1>
 
 				<form class="was-validated" action="EditarAdministrativo" method="post">
 
@@ -115,9 +115,8 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
 		crossorigin="anonymous"></script>
-	<script src="Assets/crearuser.js"></script>
+	<script src="Assets/editarAdministrativo.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="Assets/idexistente.js"></script>
-	<script src="Assets/segperfil.js"></script>
+
 </body>
 </html>
